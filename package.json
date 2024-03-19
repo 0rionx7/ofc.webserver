@@ -1,0 +1,34 @@
+{
+  "name": "e-poka.web_server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --inspect server.js",
+    "start:prod": "pm2 start server.js --no-daemon",
+    "test": "node test.js",
+    "lint": "eslint **/*.js"
+  },
+  "dependencies": {
+    "@socket.io/mongo-adapter": "^0.3.2",
+    "applicationinsights": "^2.9.4",
+    "axios": "^1.6.7",
+    "debug": "^4.3.4",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-validator": "^7.0.1",
+    "mongoose": "^8.2.0",
+    "nodemailer": "^6.9.10",
+    "rate-limiter-flexible": "^5.0.0",
+    "socket.io": "^4.7.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-security": "^2.1.1"
+  }
+}
