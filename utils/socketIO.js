@@ -21,23 +21,23 @@ export function socketListen(socket) {
   socket.on('disconnecting', async function disconnectingHandler(reason) {
     appLogger(`disconnecting ${socket.id} due to :${reason}`);
     const [socketId, gameId] = [...socket.rooms]; // (rooms is a Set)
-    if (gameId) {
-      try {
-        await backendCall({
-          method: 'patch',
-          originalUrl: '/disconnection',
-          body: { gameId, socketId },
-          headers: { 'Content-Type': 'application/json' },
-        });
-        appLogger('❌ disconnection SitOut ❗');
-      } catch (error) {
-        errorHandler.handle(
-          error,
-          { gameId, socketId },
-          '❌ disconnection SitOut ❗'
-        );
-      }
-    }
+    // if (gameId) {
+    //   try {
+    //     await backendCall({
+    //       method: 'patch',
+    //       originalUrl: '/disconnection',
+    //       body: { gameId, socketId },
+    //       headers: { 'Content-Type': 'application/json' },
+    //     });
+    //     appLogger('❌ disconnection SitOut ❗');
+    //   } catch (error) {
+    //     errorHandler.handle(
+    //       error,
+    //       { gameId, socketId },
+    //       '❌ disconnection SitOut ❗'
+    //     );
+    //   }
+    // }
     try {
       await backendCall({
         method: 'post',

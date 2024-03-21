@@ -62,29 +62,9 @@ export const loginSchema = {
 
 export const tableSchema = {
   'openTableData.tableName': tableNameValidators,
-  'openTableData.rotation': {
+  'openTableData.initialPlayTime': {
     isIn: {
-      options: [['clockwise', 'counterclockwise']],
-      errorMessage: 'Server error',
-    },
-  },
-  'openTableData.cava': {
-    isInt: {
-      options: { min: 100, max: 1000000 },
-      errorMessage: `Η κάβα πρέπει να είναι ακέραιος αριθμός 
-      μεταξύ 100 και 1000000 μονάδων.`,
-    },
-  },
-  'openTableData.chip': {
-    isInt: {
-      options: { min: 1, max: 1000 },
-      errorMessage: `Το τσιπ πρέπει να είναι ακέραιος αριθμός 
-      μεταξύ 1 και 1000 μονάδων.`,
-    },
-  },
-  'openTableData.reaction': {
-    isIn: {
-      options: [[30, '30', '45', '60', '90', '101']],
+      options: [[30, '30', '45', '60', '90', '120']],
       errorMessage: 'Server error',
     },
   },

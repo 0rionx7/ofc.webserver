@@ -1,13 +1,13 @@
 import express from 'express';
 
 import { playerSittingOut, restartGame } from '../controllers/gameState.js';
-import { betSchema, tableSchema } from '../utils/validationSchemas.js';
+import { tableSchema } from '../utils/validationSchemas.js';
 import { forwardToBackend } from '../utils/backendCall.js';
 import { body, checkSchema, param } from 'express-validator';
 
 export const gameStateRouter = express.Router();
 
-gameStateRouter.route('').post(checkSchema(tableSchema), forwardToBackend);
+gameStateRouter.route('').post(forwardToBackend);
 gameStateRouter.route('/:id').get(param('id').isMongoId(), forwardToBackend);
 
 gameStateRouter.use(body('gameId').isMongoId());
