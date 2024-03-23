@@ -1,9 +1,8 @@
 import express from 'express';
 
 import { playerSittingOut, restartGame } from '../controllers/gameState.js';
-import { tableSchema } from '../utils/validationSchemas.js';
 import { forwardToBackend } from '../utils/backendCall.js';
-import { body, checkSchema, param } from 'express-validator';
+import { body, param } from 'express-validator';
 
 export const gameStateRouter = express.Router();
 
