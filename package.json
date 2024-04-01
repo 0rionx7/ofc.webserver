@@ -8,7 +8,7 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --inspect server.js",
+    "start": "node server.js",
     "start:prod": "pm2 start server.js --no-daemon",
     "test": "node test.js",
     "lint": "eslint **/*.js"
