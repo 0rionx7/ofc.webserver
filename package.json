@@ -18,7 +18,7 @@
     "applicationinsights": "^2.9.4",
     "axios": "^1.7.4",
     "debug": "^4.3.4",
-    "express": "^4.19.2",
+    "express": "^4.21.1",
     "express-mongo-sanitize": "^2.2.0",
     "express-validator": "^7.0.1",
     "mongoose": "^8.2.0",
